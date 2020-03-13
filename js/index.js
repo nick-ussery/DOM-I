@@ -50,6 +50,7 @@ header.className = "header";
 const navStuff = document.querySelectorAll("a");
 
 const navBar = document.getElementsByTagName("nav");
+const theNav = navBar[0];
 
 // console.log(navStuff);
 const nav_item = document.createElement("a");
@@ -67,6 +68,23 @@ navStuff[3].textContent = siteContent.nav["nav-item-4"];
 navStuff[4].textContent = siteContent.nav["nav-item-5"];
 navStuff[5].textContent = siteContent.nav["nav-item-6"];
 
+const endLink = document.createElement("a");
+endLink.textContent = "Yes";
+endLink.style.color = "green";
+
+const beforeLink = document.createElement("a");
+beforeLink.textContent = "why";
+beforeLink.style.color = "green";
+
+theNav.prepend(beforeLink);
+theNav.appendChild(endLink);
+
+// navStuff.forEach(turnGreen, () => {"color = green"});
+for(let i =0; i< navStuff.length; i++){
+  navStuff[i].style.color = "green";
+}
+
+
 const ctaElement = document.getElementsByClassName("cta");
 console.log(ctaElement);
 // ctaElement.style.display= "flex";
@@ -80,17 +98,16 @@ ctaIMG=document.getElementById("cta-img");
 ctaIMG.setAttribute("src","/img/header-img.png");
 
 const mainSection = document.getElementsByClassName("text-content");
-mainSection[0].firstChild.textContent= "FEATURES";
-
-mainSection[0].lastChild.textContent = "Aliquam elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-mainSection[1].firstChild.textContent =  "ABOUT";
-mainSection[1].lastChild.textContent = "Aliquam elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-mainSection[2].firstChild.textContent = "SERVICES";
-mainSection[2].lastChild.textContent = "Aliquam elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-mainSection[3].firstChild.textContent = "PRODUCT";
-mainSection[3].lastChild.textContent = "Aliquam elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-mainSection[4].firstChild.textContent ="VISION";
-mainSection[4].lastChild.textContent = "Aliquam elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
+mainSection[0].firstChild.textContent= siteContent["main-content"]["features-h4"];
+mainSection[0].lastChild.textContent = siteContent["main-content"]["features-content"];
+mainSection[1].firstChild.textContent =  siteContent["main-content"]["about-h4"];
+mainSection[1].lastChild.textContent = siteContent["main-content"]["about-content"];
+mainSection[2].firstChild.textContent = siteContent["main-content"]["services-h4"];
+mainSection[2].lastChild.textContent = siteContent["main-content"]["services-content"];
+mainSection[3].firstChild.textContent = siteContent["main-content"]["product-h4"];
+mainSection[3].lastChild.textContent = siteContent["main-content"]["product-content"];
+mainSection[4].firstChild.textContent = siteContent["main-content"]["vision-h4"];
+mainSection[4].lastChild.textContent = siteContent["main-content"]["vision-content"];
 
 const midImg = document.getElementById("middle-img");
 midImg.setAttribute("src","/img/mid-page-accent.jpg");
@@ -107,7 +124,7 @@ let addressLine1 = "123 Way 456 Street";
 let addressLine2 = "Somewhere, USA";
 let wholeAddress= addressLine1 + " <br> " + addressLine2;
 // contactSection.append("p");
-contactList[0].textContent = wholeAddress;
+contactList[0].innerHTML = wholeAddress;
 contactList[1].textContent = "1(888) 888-8888";
 contactList[2].textContent = "sales@greatidea.io";
 
