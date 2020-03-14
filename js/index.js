@@ -40,3 +40,94 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+
+
+const header = document.getElementsByTagName("header");
+header.className = "header";
+
+const navStuff = document.querySelectorAll("a");
+
+const navBar = document.getElementsByTagName("nav");
+const theNav = navBar[0];
+
+// console.log(navStuff);
+const nav_item = document.createElement("a");
+
+const nav_item1 = document.querySelector("nav a");
+
+nav_item.textContent = "nav item";
+nav_item.style.textDecoration = "none";
+nav_item.style.fontSize = "24px";
+
+navStuff[0].textContent = siteContent.nav["nav-item-1"];
+navStuff[1].textContent = siteContent.nav["nav-item-2"];
+navStuff[2].textContent = siteContent.nav["nav-item-3"];
+navStuff[3].textContent = siteContent.nav["nav-item-4"];
+navStuff[4].textContent = siteContent.nav["nav-item-5"];
+navStuff[5].textContent = siteContent.nav["nav-item-6"];
+
+const endLink = document.createElement("a");
+endLink.textContent = "Yes";
+endLink.style.color = "green";
+
+const beforeLink = document.createElement("a");
+beforeLink.textContent = "why";
+beforeLink.style.color = "green";
+
+theNav.prepend(beforeLink);
+theNav.appendChild(endLink);
+
+// navStuff.forEach(turnGreen, () => {"color = green"});
+for(let i =0; i< navStuff.length; i++){
+  navStuff[i].style.color = "green";
+}
+
+
+const ctaElement = document.getElementsByClassName("cta");
+console.log(ctaElement);
+// ctaElement.style.display= "flex";
+const headerContent = document.querySelector("h1");
+headerContent.textContent =siteContent.cta.h1;
+
+const headerButton = document.getElementsByTagName("button");
+headerButton[0].textContent = "Get Started";
+
+ctaIMG=document.getElementById("cta-img");
+ctaIMG.setAttribute("src","/img/header-img.png");
+
+const mainSection = document.getElementsByClassName("text-content");
+mainSection[0].firstChild.textContent= siteContent["main-content"]["features-h4"];
+mainSection[0].lastChild.textContent = siteContent["main-content"]["features-content"];
+mainSection[1].firstChild.textContent =  siteContent["main-content"]["about-h4"];
+mainSection[1].lastChild.textContent = siteContent["main-content"]["about-content"];
+mainSection[2].firstChild.textContent = siteContent["main-content"]["services-h4"];
+mainSection[2].lastChild.textContent = siteContent["main-content"]["services-content"];
+mainSection[3].firstChild.textContent = siteContent["main-content"]["product-h4"];
+mainSection[3].lastChild.textContent = siteContent["main-content"]["product-content"];
+mainSection[4].firstChild.textContent = siteContent["main-content"]["vision-h4"];
+mainSection[4].lastChild.textContent = siteContent["main-content"]["vision-content"];
+
+const midImg = document.getElementById("middle-img");
+midImg.setAttribute("src","/img/mid-page-accent.jpg");
+
+const contactSection = document.querySelector("contact");
+const contactHeader = document.querySelector(".contact h4");
+
+contactHeader.textContent = "CONTACT";
+
+const contactList = document.querySelectorAll(".contact p");
+
+
+let addressLine1 = "123 Way 456 Street";
+let addressLine2 = "Somewhere, USA";
+let wholeAddress= addressLine1 + " <br> " + addressLine2;
+// contactSection.append("p");
+contactList[0].innerHTML = wholeAddress;
+contactList[1].textContent = "1(888) 888-8888";
+contactList[2].textContent = "sales@greatidea.io";
+
+
+const footerContent = document.querySelector("footer p");
+footerContent.textContent = "Copyright Great Idea! 2018";
