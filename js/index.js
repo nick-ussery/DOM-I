@@ -47,7 +47,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 const header = document.getElementsByTagName("header");
 header.className = "header";
 
-const navStuff = document.querySelectorAll("a");
+const navStuff = document.querySelectorAll("nav a");
 
 const navBar = document.getElementsByTagName("nav");
 const theNav = navBar[0];
@@ -67,6 +67,7 @@ navStuff[2].textContent = siteContent.nav["nav-item-3"];
 navStuff[3].textContent = siteContent.nav["nav-item-4"];
 navStuff[4].textContent = siteContent.nav["nav-item-5"];
 navStuff[5].textContent = siteContent.nav["nav-item-6"];
+
 
 const endLink = document.createElement("a");
 endLink.textContent = "Yes";
